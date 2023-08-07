@@ -12,6 +12,10 @@ add_action('wp_enqueue_scripts', 'university_files');
 
 function university_features() {
   add_theme_support('title-tag');
+  register_nav_menu("headerMenuLocation", "Header Menu Location"); // this will add the menu in the admin menu tab
+  register_nav_menu("footerLocationOne", "Footer Location One"); // this will add the menu in the admin menu tab
+  register_nav_menu("footerLocationTwo", "Footer Location Two"); // this will add the menu in the admin menu tab
 }
 add_action('after_setup_theme', 'university_features');
 ?>
+
