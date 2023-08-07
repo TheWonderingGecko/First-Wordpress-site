@@ -17,13 +17,27 @@
         <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
         <div class="site-header__menu group">
           <nav class="main-navigation">
-            <ul>
+            <?php
+             wp_nav_menu(array(
+                'theme_location' => 'headerMenuLocation'
+              )
+
+             );
+            
+            ?>
+            <!-- <ul>
               <li><a href="<?php echo site_url('/about-us') ?>">About Us</a></li>
               <li><a href="#">Programs</a></li>
               <li><a href="#">Events</a></li>
               <li><a href="#">Campuses</a></li>
               <li><a href="#">Blog</a></li>
-            </ul>
+            </ul> -->
+            <!-- replace with dynamic menu with wp_vane_menu()
+            then we will pass it an array of aguments array() with agumenr 'theme_locations
+ =>  first agument of the register_nav_menu() function in functions.php
+          this should add the menu and should be able to see it in the admin menu tab --> 
+           <!--repeat for the  footer navigation  -->
+         
           </nav>
           <div class="site-header__util">
             <a href="#" class="btn btn--small btn--orange float-left push-right">Login</a>
