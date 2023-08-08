@@ -1,0 +1,33 @@
+Blog listing page steps
+1-Add a new home page and a new Blog page
+2- in the reading options of settings select static page and use the newly created pages home as front and posts as Blog
+3-copy the index.php file and rename it to front-page.php and save
+4-delete everything from index.php and added universal header and footer
+5- Copy page banned div from front-page between header and footer wuth welcome to our blog as title and Keep up with out latest news as subtitle
+6- copy the caintainer div tag and add hello
+7- go into php and add while loop to iterate over the posts argument is have_posts() and the function is the_post()
+8- wuthin as the_post() add the title and the content and drop out of php and create div with class post-iyem
+9- add h2 with link with the_title() and href with the_permalink()  in php
+8- create another div with class metabox with p tag with the_author_posts_link() and (the_date(), or the_time("n.j.y")) and echo get_the_category_list(', ')  "Posted by Brad on 28/08/2019 in Uncategorized"
+9-add another div with class generic-content and jump into php with the_excerpt() and drop out of php
+10- addd a p tag with a link with the_permalink() and read more as text with class of btn and btn--blue
+11- add to the h2 tag the class of headline headline--medium headline--post-title
+12- to control wordpress username go to admin and go to users and click on your profile and change Nickname to Brad and display name publicly as Brad
+13- add posts and the catagories and tags
+
+
+BLog continued 23.
+our goal is pagination here 
+1- go to admin and in settings in reading  and change the blog pages show at most to 2
+2- go to index.php and add the pagination function
+and  befor the closing div  add some php and add the pagination function using echo paginate_links()
+3- got back to settings and change the blog pages show at most to 10
+4-next work on the single post page 
+5- add the standard banner from page.php and add it below the the_post and delet the other banner
+
+6-add the next opening div and and metabox will go here and below open new div  with class of generic-content and add the_content() and close the div
+7- go to page.php and copy the div with the metabos class and weplace the metabox line from earlier and remove PHP with after the back to and change to BLog home 
+8- change href echo site_url('/blog') to echo get_post_type_archive_link('post') and change the title to Blog home
+9- copy the conten of the P tag in page the starts with posted and delete the title echo and replace with the_author_posts_link() and the_date() and echo get_the_category_list(', ') and add the class of post__meta
+10- 
+
