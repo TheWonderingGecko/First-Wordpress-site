@@ -1,4 +1,16 @@
-archive php
-1-create archive file
-2-change the welcome to our blog us if with function is_category() and is_author instead use the_archive_title();
-3-subtitle use the the_archive_description(); add description in bio of the admin page do the same with categories
+custom queries
+Goals load in two most recent blog have_post
+1-hollow out the current from our blog section
+2-create opject $homepagePosts the creates a new WP_Query() with an array as the argument containing 'posts_per_page' => 2
+3.create a while loop by using the $hompagePosts->have_posts() and $hompagePosts->The_posts()
+
+4. add the event-summary did into the while loop
+5. the add dynamic values use the_time("M") and the_time("d")
+6. and the_title() and a the_permalink()
+7. and echo wp_trim_words(get_the_content(),18) and add the permea link again after
+8. after whileloop use the function wp_reset_postdata(); 
+
+
+few wuick edits
+1. update the view all blog links echo site_url(/blog)
+2. 
