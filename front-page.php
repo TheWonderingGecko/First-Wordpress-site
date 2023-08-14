@@ -15,9 +15,22 @@
         <div class="full-width-split__inner">
           <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
           <?php 
+          $today = date('Ymd');
           $homepageEvents = new WP_Query(array(//blueprint for custom query
             'posts_per_page' => 2,
-            'post_type'=> 'event' // the custom post we want to access
+            'post_type'=> 'event', // the custom post we want to access
+            'meta_key' => 'event_date',// assigns the customs sort based on the field type
+            'orderby'=> 'meta_value_num',// order them my numbers
+            'order'=> 'ASC',// makes sure the are ascending 
+            'meta_query' =>array(// this query will make sure events from the past are not shown
+              'key'=> 'event_date', //checks that the event date
+              'compare'=> '>=', //is greater than or equal to the 
+              'value'=> $today,// today's date 
+              'type' => 'numeric',// tells wordpress that the type is numeric
+
+            )
+
+            
 
           ) );
 
@@ -26,8 +39,13 @@
 
             <div class="event-summary">
             <a class="event-summary__date t-center" href="#">
-              <span class="event-summary__month">Mar</span>
-              <span class="event-summary__day">25</span>
+              <span class="event-summary__month"><?php 
+              $eventDate = new DateTime(get_field('event_date'));
+              echo $eventDate-> format('M')
+              
+              
+              ?></span>
+              <span class="event-summary__day"><?php echo $eventDate-> format('d')?></span>
             </a>
             <div class="event-summary__content">
               <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h5>
