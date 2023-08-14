@@ -6,7 +6,7 @@ function university_files() {
   wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
   wp_enqueue_style('university_main_styles', get_theme_file_uri('/build/style-index.css'));
   wp_enqueue_style('university_extra_styles', get_theme_file_uri('/build/index.css'));
-}
+}// review this section
 
 add_action('wp_enqueue_scripts', 'university_files');
 
@@ -17,5 +17,8 @@ function university_features() {
   register_nav_menu("footerLocationTwo", "Footer Location Two"); // this will add the menu in the admin menu tab
 }
 add_action('after_setup_theme', 'university_features');
+//custom plugins located in mu-plugins folder , make sure to save changes of permalinks in settings
 ?>
+
+
 
