@@ -17,7 +17,7 @@
           <?php 
           $today = date('Ymd');
           $homepageEvents = new WP_Query(array(//blueprint for custom query
-            'posts_per_page' => 2,
+            'posts_per_page' => 1,
             'post_type'=> 'event', // the custom post we want to access
             'meta_key' => 'event_date',// assigns the customs sort based on the field type
             'orderby'=> 'meta_value_num',// order them my numbers

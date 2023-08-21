@@ -18,6 +18,26 @@ function university_features() {
 }
 add_action('after_setup_theme', 'university_features');
 //custom plugins located in mu-plugins folder , make sure to save changes of permalinks in settings
+function university_adjust_queries($query){ //$query is given by wordpress
+  $today = date('Ymd');
+  if(!is_admin() && is_post_type_archive('event') && $query->is_main_query()){ // is_admin ensures this is only done on the backend
+    $query->set('meta_key', 'event_date');
+    $query->set( 'orderby','meta_value_num');
+    $query->set( 'order','ASC');
+    $query->set('meta_query',array(
+              'key'=> 'event_date', 
+              'compare'=> '>=', 
+              'value'=> $today,
+              'type' => 'numeric',
+            ));
+    
+    
+
+
+  }
+
+};
+add_action('pre_get_posts','university_adjust_queries')
 ?>
 
 
